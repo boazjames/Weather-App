@@ -335,7 +335,9 @@ extension LocationDetailsViewController: UICollectionViewDataSource {
 extension LocationDetailsViewController {
     private func getCurrentWeather() {
         self.showProgress(onView: self.containerView)
-        getWeather { (data, error) in
+        let lat = item.value(forKey: "lat") as! Double
+        let lng = item.value(forKey: "lng") as! Double
+        getWeather(lat: lat, lng: lng) {(data, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     print("an error occured")
@@ -362,7 +364,9 @@ extension LocationDetailsViewController {
     }
     
     private func getData() {
-        getForecasts { (data, error) in
+        let lat = item.value(forKey: "lat") as! Double
+        let lng = item.value(forKey: "lng") as! Double
+        getForecasts(lat: lat, lng: lng) { (data, error) in
             DispatchQueue.main.async {
                 self.hideProgress()
                 if let error = error {
@@ -388,9 +392,7 @@ extension LocationDetailsViewController {
         }
     }
     
-    func getForecasts(completionHandler: @escaping (Response?, Error?) -> Void) {
-        let lat = item.value(forKey: "lat") as! Double
-        let lng = item.value(forKey: "lng") as! Double
+    func getForecasts(lat: Double, lng: Double, completionHandler: @escaping (Response?, Error?) -> Void) {
         let url = URL(string: "\(BASE_URL)forecast?lat=\(lat)&lon=\(lng)&units=\(Configuration.getUnits())&appid=\(API_KEY)")!
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -405,9 +407,7 @@ extension LocationDetailsViewController {
         task.resume()
     }
     
-    func getWeather(completionHandler: @escaping (TodayWeatherResponse?, Error?) -> Void) {
-        let lat = item.value(forKey: "lat") as! Double
-        let lng = item.value(forKey: "lng") as! Double
+    func getWeather(lat: Double, lng: Double, completionHandler: @escaping (TodayWeatherResponse?, Error?) -> Void) {
         let url = URL(string: "\(BASE_URL)weather?lat=\(lat)&lon=\(lng)&units=\(Configuration.getUnits())&appid=\(API_KEY)")!
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in

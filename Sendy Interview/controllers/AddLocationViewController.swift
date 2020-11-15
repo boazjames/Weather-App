@@ -13,8 +13,8 @@ import CoreData
 
 class AddLocationViewController: UIViewController {
     private var mapView: MKMapView!
-    private var btnCancel: UIButton!
-    private var btnDone: UIButton!
+    var btnCancel: UIButton!
+    var btnDone: UIButton!
     private var cvLocate: CardView!
     private var selectedAddress = ""
     private var selectedCoordidate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
@@ -27,7 +27,7 @@ class AddLocationViewController: UIViewController {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         return manager
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -134,29 +134,14 @@ class AddLocationViewController: UIViewController {
     }
     
     @objc private func saveLocation() {
-        guard let appDelegate =
-          UIApplication.shared.delegate as? AppDelegate else {
-          return
-        }
-        
-        let managedContext = appDelegate.databaseContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Location", in: managedContext)!
-        
-        let location = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        location.setValue(selectedAddress, forKeyPath: "address")
-        location.setValue(selectedCoordidate.latitude, forKeyPath: "lat")
-        location.setValue(selectedCoordidate.longitude, forKeyPath: "lng")
-        
-        do {
-          try managedContext.save()
+        if saveAddress(address: selectedAddress, lat: selectedCoordidate.latitude, lng: selectedCoordidate.longitude) {
             self.saveLocationDelegate.didSaveLocation()
-            self.dismissController()
-        } catch let error as NSError {
+            
+            self.showSuccessAlert(title: "Success", message: "Location saved successfully") {
+                self.dismissController()
+            }
+        } else {
             showAlert("Could not save address")
-          print("Could not save. \(error), \(error.userInfo)")
         }
     }
     
@@ -171,7 +156,7 @@ class AddLocationViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 // MARK: CLLocationManagerDelegate

@@ -70,6 +70,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    var btnAdd: UIBarButtonItem {
+        let btn = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(presentAddVc))
+        return btn
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,8 +107,7 @@ class HomeViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         
-        let addItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(presentAddVc))
-        navItem.rightBarButtonItem = addItem
+        navItem.rightBarButtonItem = btnAdd
         
         navBar.setItems([navItem], animated: false)
         
@@ -141,7 +145,6 @@ class HomeViewController: UIViewController {
             tableView.tableHeaderView = searchController.searchBar
         }
         
-        //hide search when nav to another ViewController
         definesPresentationContext = true
         
         self.searchController.extendedLayoutIncludesOpaqueBars = false
@@ -203,6 +206,7 @@ class HomeViewController: UIViewController {
     
     func filterAddress(_ searchText: String) {
         if !isSearchBarEmpty {
+            filteredLocations = filterLocations(items: locations, searchTerm:  searchText)
             filteredLocations = locations.filter { (item: NSManagedObject) -> Bool in
                 let address = item.value(forKey: "address") as! String
                 return address.lowercased().contains(searchText.lowercased())
@@ -210,6 +214,13 @@ class HomeViewController: UIViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    func filterLocations(items: [NSManagedObject], searchTerm: String) -> [NSManagedObject] {
+        return items.filter { (item: NSManagedObject) -> Bool in
+            let address = item.value(forKey: "address") as! String
+            return address.lowercased().contains(searchTerm.lowercased())
+        }
     }
     
 }
@@ -226,7 +237,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var item: NSManagedObject!
-        if searchController.searchBar.text?.isEmpty == true {
+        if searchController.searchBar.text?.isEmpty == true && searchController.isActive == false {
             item = self.locations[indexPath.row]
         } else {
             item = self.filteredLocations[indexPath.row]
@@ -258,7 +269,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             var item: NSManagedObject!
-            if self.searchController.searchBar.text?.isEmpty == true {
+            if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
                 item = self.locations[indexPath.row]
             } else {
                 item = self.filteredLocations[indexPath.row]
@@ -280,7 +291,7 @@ extension HomeViewController: UITableViewDelegate {
         DispatchQueue.main.async {
             if editingStyle == .delete {
                 var item: NSManagedObject!
-                if self.searchController.searchBar.text?.isEmpty == true {
+                if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
                     item = self.locations[indexPath.row]
                 } else {
                     item = self.filteredLocations[indexPath.row]
@@ -294,16 +305,14 @@ extension HomeViewController: UITableViewDelegate {
                 managedContext.delete(item)
                 
                 do {
-                    try managedContext.save()
-                    if self.isSearchBarEmpty {
+                    if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
                         self.locations.remove(at: indexPath.row)
                     } else {
-                        print("deleting: \(indexPath.row)")
                         self.filteredLocations.remove(at: indexPath.row)
                         let idx = self.locations.firstIndex(where: { (ele) -> Bool in
-                            ele.objectID.isEqual(item)
+                            ele.objectID == item.objectID
                         })
-                        
+                                                                        
                         if let index = idx {
                             if index >= 0 {
                                 self.locations.remove(at: index)
@@ -313,6 +322,7 @@ extension HomeViewController: UITableViewDelegate {
                     tableView.beginUpdates()
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     tableView.endUpdates()
+                    try managedContext.save()
                 } catch _ as NSError {
                     self.showAlert("Could not delete item")
                 }

@@ -12,4 +12,5 @@ struct TodayWeatherResponse: Decodable {
     var main: MainWeather
     var weather: [Weather]
     var wind: Wind
+    var cod: Int
 }

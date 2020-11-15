@@ -82,7 +82,6 @@ extension CLLocation {
     func lookUpLocationName(_ handler: @escaping (String?) -> Void) {
         
         lookUpPlaceMark { (placemark) in
-            print(placemark)
             handler(placemark?.name)
         }
     }
@@ -120,6 +119,16 @@ extension UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            actionButtonClosure()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func showSuccessAlert(title: String, message: String, actionButtonClosure: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             actionButtonClosure()
         }))
