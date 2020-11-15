@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5258A44C255E756000A97C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A44B255E756000A97C16 /* AppDelegate.swift */; };
+		5258A44E255E756000A97C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A44D255E756000A97C16 /* SceneDelegate.swift */; };
+		5258A450255E756000A97C16 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A44F255E756000A97C16 /* MainViewController.swift */; };
+		5258A456255E756000A97C16 /* Sendy_Interview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5258A454255E756000A97C16 /* Sendy_Interview.xcdatamodeld */; };
+		5258A458255E756200A97C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5258A457255E756200A97C16 /* Assets.xcassets */; };
+		5258A45B255E756200A97C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5258A459255E756200A97C16 /* LaunchScreen.storyboard */; };
+		5258A466255E756200A97C16 /* Sendy_InterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A465255E756200A97C16 /* Sendy_InterviewTests.swift */; };
+		5258A471255E756200A97C16 /* Sendy_InterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A470255E756200A97C16 /* Sendy_InterviewUITests.swift */; };
+		5258A481255E965900A97C16 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A480255E965900A97C16 /* HomeViewController.swift */; };
+		5258A483255E966800A97C16 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A482255E966800A97C16 /* SettingsViewController.swift */; };
+		5258A485255E967100A97C16 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A484255E967100A97C16 /* HelpViewController.swift */; };
+		5258A487255EA09E00A97C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5258A486255EA09E00A97C16 /* Main.storyboard */; };
+		5258A48A255EA44B00A97C16 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A489255EA44B00A97C16 /* Extensions.swift */; };
+		5258A48C255EA45300A97C16 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A48B255EA45300A97C16 /* Helpers.swift */; };
+		5258A48E255EBC8400A97C16 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A48D255EBC8400A97C16 /* AddLocationViewController.swift */; };
+		5258A490255EC61200A97C16 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A48F255EC61200A97C16 /* CardView.swift */; };
+		5258A493255EF02C00A97C16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5258A492255EF02C00A97C16 /* CoreData.framework */; };
+		5258A497255F106100A97C16 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A496255F106100A97C16 /* LocationCell.swift */; };
+		5258A499255FDEE700A97C16 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A498255FDEE700A97C16 /* LocationDetailsViewController.swift */; };
+		5258A49B25601B3D00A97C16 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A49A25601B3C00A97C16 /* WeatherCell.swift */; };
+		5258A49F25602AAA00A97C16 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A49E25602AAA00A97C16 /* DayCell.swift */; };
+		5258A4A225603BBB00A97C16 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4A125603BBB00A97C16 /* Weather.swift */; };
+		5258A4A425603C4A00A97C16 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4A325603C4A00A97C16 /* Wind.swift */; };
+		5258A4A625603C9C00A97C16 /* MainWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4A525603C9C00A97C16 /* MainWeather.swift */; };
+		5258A4A825603D9300A97C16 /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4A725603D9300A97C16 /* WeatherItem.swift */; };
+		5258A4AA25603E2D00A97C16 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4A925603E2D00A97C16 /* Response.swift */; };
+		5258A4AC2560414A00A97C16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4AB2560414A00A97C16 /* Constants.swift */; };
+		5258A4AF2560465700A97C16 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4AE2560465700A97C16 /* Configuration.swift */; };
+		5258A4B125605EBA00A97C16 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4B025605EBA00A97C16 /* TodayView.swift */; };
+		5258A4B325607F8000A97C16 /* TodayWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4B225607F8000A97C16 /* TodayWeatherResponse.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5258A462255E756200A97C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5258A440255E756000A97C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5258A447255E756000A97C16;
+			remoteInfo = "Sendy Interview";
+		};
+		5258A46D255E756200A97C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5258A440255E756000A97C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5258A447255E756000A97C16;
+			remoteInfo = "Sendy Interview";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5258A448255E756000A97C16 /* Sendy Interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sendy Interview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5258A44B255E756000A97C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5258A44D255E756000A97C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5258A44F255E756000A97C16 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5258A455255E756000A97C16 /* Sendy_Interview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sendy_Interview.xcdatamodel; sourceTree = "<group>"; };
+		5258A457255E756200A97C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5258A45A255E756200A97C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5258A45C255E756200A97C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5258A461255E756200A97C16 /* Sendy InterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sendy InterviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5258A465255E756200A97C16 /* Sendy_InterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendy_InterviewTests.swift; sourceTree = "<group>"; };
+		5258A467255E756200A97C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5258A46C255E756200A97C16 /* Sendy InterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sendy InterviewUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5258A470255E756200A97C16 /* Sendy_InterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendy_InterviewUITests.swift; sourceTree = "<group>"; };
+		5258A472255E756200A97C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5258A480255E965900A97C16 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5258A482255E966800A97C16 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5258A484255E967100A97C16 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		5258A486255EA09E00A97C16 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5258A489255EA44B00A97C16 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5258A48B255EA45300A97C16 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		5258A48D255EBC8400A97C16 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		5258A48F255EC61200A97C16 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5258A492255EF02C00A97C16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5258A496255F106100A97C16 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		5258A498255FDEE700A97C16 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		5258A49A25601B3C00A97C16 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		5258A49E25602AAA00A97C16 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		5258A4A125603BBB00A97C16 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		5258A4A325603C4A00A97C16 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		5258A4A525603C9C00A97C16 /* MainWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeather.swift; sourceTree = "<group>"; };
+		5258A4A725603D9300A97C16 /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
+		5258A4A925603E2D00A97C16 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		5258A4AB2560414A00A97C16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5258A4AE2560465700A97C16 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		5258A4B025605EBA00A97C16 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		5258A4B225607F8000A97C16 /* TodayWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherResponse.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5258A445255E756000A97C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258A493255EF02C00A97C16 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A45E255E756200A97C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A469255E756200A97C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5258A43F255E756000A97C16 = {
+			isa = PBXGroup;
+			children = (
+				5258A44A255E756000A97C16 /* Sendy Interview */,
+				5258A464255E756200A97C16 /* Sendy InterviewTests */,
+				5258A46F255E756200A97C16 /* Sendy InterviewUITests */,
+				5258A449255E756000A97C16 /* Products */,
+				5258A491255EF02C00A97C16 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5258A449255E756000A97C16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5258A448255E756000A97C16 /* Sendy Interview.app */,
+				5258A461255E756200A97C16 /* Sendy InterviewTests.xctest */,
+				5258A46C255E756200A97C16 /* Sendy InterviewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5258A44A255E756000A97C16 /* Sendy Interview */ = {
+			isa = PBXGroup;
+			children = (
+				5258A4AD2560463200A97C16 /* app */,
+				5258A4A025603BA600A97C16 /* decodables */,
+				5258A488255EA43800A97C16 /* utils */,
+				5258A47F255E93BE00A97C16 /* views */,
+				5258A47E255E93A800A97C16 /* controllers */,
+				5258A44B255E756000A97C16 /* AppDelegate.swift */,
+				5258A44D255E756000A97C16 /* SceneDelegate.swift */,
+				5258A457255E756200A97C16 /* Assets.xcassets */,
+				5258A486255EA09E00A97C16 /* Main.storyboard */,
+				5258A459255E756200A97C16 /* LaunchScreen.storyboard */,
+				5258A45C255E756200A97C16 /* Info.plist */,
+				5258A454255E756000A97C16 /* Sendy_Interview.xcdatamodeld */,
+			);
+			path = "Sendy Interview";
+			sourceTree = "<group>";
+		};
+		5258A464255E756200A97C16 /* Sendy InterviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				5258A465255E756200A97C16 /* Sendy_InterviewTests.swift */,
+				5258A467255E756200A97C16 /* Info.plist */,
+			);
+			path = "Sendy InterviewTests";
+			sourceTree = "<group>";
+		};
+		5258A46F255E756200A97C16 /* Sendy InterviewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5258A470255E756200A97C16 /* Sendy_InterviewUITests.swift */,
+				5258A472255E756200A97C16 /* Info.plist */,
+			);
+			path = "Sendy InterviewUITests";
+			sourceTree = "<group>";
+		};
+		5258A47E255E93A800A97C16 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5258A44F255E756000A97C16 /* MainViewController.swift */,
+				5258A480255E965900A97C16 /* HomeViewController.swift */,
+				5258A482255E966800A97C16 /* SettingsViewController.swift */,
+				5258A484255E967100A97C16 /* HelpViewController.swift */,
+				5258A48D255EBC8400A97C16 /* AddLocationViewController.swift */,
+				5258A498255FDEE700A97C16 /* LocationDetailsViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		5258A47F255E93BE00A97C16 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5258A48F255EC61200A97C16 /* CardView.swift */,
+				5258A496255F106100A97C16 /* LocationCell.swift */,
+				5258A49A25601B3C00A97C16 /* WeatherCell.swift */,
+				5258A49E25602AAA00A97C16 /* DayCell.swift */,
+				5258A4B025605EBA00A97C16 /* TodayView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		5258A488255EA43800A97C16 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5258A489255EA44B00A97C16 /* Extensions.swift */,
+				5258A48B255EA45300A97C16 /* Helpers.swift */,
+				5258A4AB2560414A00A97C16 /* Constants.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		5258A491255EF02C00A97C16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5258A492255EF02C00A97C16 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5258A4A025603BA600A97C16 /* decodables */ = {
+			isa = PBXGroup;
+			children = (
+				5258A4A125603BBB00A97C16 /* Weather.swift */,
+				5258A4A325603C4A00A97C16 /* Wind.swift */,
+				5258A4A525603C9C00A97C16 /* MainWeather.swift */,
+				5258A4A725603D9300A97C16 /* WeatherItem.swift */,
+				5258A4A925603E2D00A97C16 /* Response.swift */,
+				5258A4B225607F8000A97C16 /* TodayWeatherResponse.swift */,
+			);
+			path = decodables;
+			sourceTree = "<group>";
+		};
+		5258A4AD2560463200A97C16 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				5258A4AE2560465700A97C16 /* Configuration.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5258A447255E756000A97C16 /* Sendy Interview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5258A475255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy Interview" */;
+			buildPhases = (
+				5258A444255E756000A97C16 /* Sources */,
+				5258A445255E756000A97C16 /* Frameworks */,
+				5258A446255E756000A97C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sendy Interview";
+			productName = "Sendy Interview";
+			productReference = 5258A448255E756000A97C16 /* Sendy Interview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5258A460255E756200A97C16 /* Sendy InterviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5258A478255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy InterviewTests" */;
+			buildPhases = (
+				5258A45D255E756200A97C16 /* Sources */,
+				5258A45E255E756200A97C16 /* Frameworks */,
+				5258A45F255E756200A97C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5258A463255E756200A97C16 /* PBXTargetDependency */,
+			);
+			name = "Sendy InterviewTests";
+			productName = "Sendy InterviewTests";
+			productReference = 5258A461255E756200A97C16 /* Sendy InterviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5258A46B255E756200A97C16 /* Sendy InterviewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5258A47B255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy InterviewUITests" */;
+			buildPhases = (
+				5258A468255E756200A97C16 /* Sources */,
+				5258A469255E756200A97C16 /* Frameworks */,
+				5258A46A255E756200A97C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5258A46E255E756200A97C16 /* PBXTargetDependency */,
+			);
+			name = "Sendy InterviewUITests";
+			productName = "Sendy InterviewUITests";
+			productReference = 5258A46C255E756200A97C16 /* Sendy InterviewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5258A440255E756000A97C16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Boaz James";
+				TargetAttributes = {
+					5258A447255E756000A97C16 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					5258A460255E756200A97C16 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 5258A447255E756000A97C16;
+					};
+					5258A46B255E756200A97C16 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 5258A447255E756000A97C16;
+					};
+				};
+			};
+			buildConfigurationList = 5258A443255E756000A97C16 /* Build configuration list for PBXProject "Sendy Interview" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5258A43F255E756000A97C16;
+			productRefGroup = 5258A449255E756000A97C16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5258A447255E756000A97C16 /* Sendy Interview */,
+				5258A460255E756200A97C16 /* Sendy InterviewTests */,
+				5258A46B255E756200A97C16 /* Sendy InterviewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5258A446255E756000A97C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258A487255EA09E00A97C16 /* Main.storyboard in Resources */,
+				5258A45B255E756200A97C16 /* LaunchScreen.storyboard in Resources */,
+				5258A458255E756200A97C16 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A45F255E756200A97C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A46A255E756200A97C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5258A444255E756000A97C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258A485255E967100A97C16 /* HelpViewController.swift in Sources */,
+				5258A4A625603C9C00A97C16 /* MainWeather.swift in Sources */,
+				5258A481255E965900A97C16 /* HomeViewController.swift in Sources */,
+				5258A450255E756000A97C16 /* MainViewController.swift in Sources */,
+				5258A4AA25603E2D00A97C16 /* Response.swift in Sources */,
+				5258A4B125605EBA00A97C16 /* TodayView.swift in Sources */,
+				5258A48A255EA44B00A97C16 /* Extensions.swift in Sources */,
+				5258A499255FDEE700A97C16 /* LocationDetailsViewController.swift in Sources */,
+				5258A48C255EA45300A97C16 /* Helpers.swift in Sources */,
+				5258A4A425603C4A00A97C16 /* Wind.swift in Sources */,
+				5258A49B25601B3D00A97C16 /* WeatherCell.swift in Sources */,
+				5258A4AF2560465700A97C16 /* Configuration.swift in Sources */,
+				5258A4A825603D9300A97C16 /* WeatherItem.swift in Sources */,
+				5258A49F25602AAA00A97C16 /* DayCell.swift in Sources */,
+				5258A4A225603BBB00A97C16 /* Weather.swift in Sources */,
+				5258A44C255E756000A97C16 /* AppDelegate.swift in Sources */,
+				5258A497255F106100A97C16 /* LocationCell.swift in Sources */,
+				5258A44E255E756000A97C16 /* SceneDelegate.swift in Sources */,
+				5258A48E255EBC8400A97C16 /* AddLocationViewController.swift in Sources */,
+				5258A4AC2560414A00A97C16 /* Constants.swift in Sources */,
+				5258A456255E756000A97C16 /* Sendy_Interview.xcdatamodeld in Sources */,
+				5258A4B325607F8000A97C16 /* TodayWeatherResponse.swift in Sources */,
+				5258A490255EC61200A97C16 /* CardView.swift in Sources */,
+				5258A483255E966800A97C16 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A45D255E756200A97C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258A466255E756200A97C16 /* Sendy_InterviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5258A468255E756200A97C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258A471255E756200A97C16 /* Sendy_InterviewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5258A463255E756200A97C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5258A447255E756000A97C16 /* Sendy Interview */;
+			targetProxy = 5258A462255E756200A97C16 /* PBXContainerItemProxy */;
+		};
+		5258A46E255E756200A97C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5258A447255E756000A97C16 /* Sendy Interview */;
+			targetProxy = 5258A46D255E756200A97C16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5258A459255E756200A97C16 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5258A45A255E756200A97C16 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5258A473255E756200A97C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5258A474255E756200A97C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5258A476255E756200A97C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy Interview/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-Interview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5258A477255E756200A97C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy Interview/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-Interview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5258A479255E756200A97C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy InterviewTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-InterviewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sendy Interview.app/Sendy Interview";
+			};
+			name = Debug;
+		};
+		5258A47A255E756200A97C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy InterviewTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-InterviewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sendy Interview.app/Sendy Interview";
+			};
+			name = Release;
+		};
+		5258A47C255E756200A97C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy InterviewUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-InterviewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sendy Interview";
+			};
+			name = Debug;
+		};
+		5258A47D255E756200A97C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ8S3QS744;
+				INFOPLIST_FILE = "Sendy InterviewUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sendyinterview.app.Sendy-InterviewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sendy Interview";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5258A443255E756000A97C16 /* Build configuration list for PBXProject "Sendy Interview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5258A473255E756200A97C16 /* Debug */,
+				5258A474255E756200A97C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5258A475255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy Interview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5258A476255E756200A97C16 /* Debug */,
+				5258A477255E756200A97C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5258A478255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy InterviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5258A479255E756200A97C16 /* Debug */,
+				5258A47A255E756200A97C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5258A47B255E756200A97C16 /* Build configuration list for PBXNativeTarget "Sendy InterviewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5258A47C255E756200A97C16 /* Debug */,
+				5258A47D255E756200A97C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5258A454255E756000A97C16 /* Sendy_Interview.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5258A455255E756000A97C16 /* Sendy_Interview.xcdatamodel */,
+			);
+			currentVersion = 5258A455255E756000A97C16 /* Sendy_Interview.xcdatamodel */;
+			path = Sendy_Interview.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5258A440255E756000A97C16 /* Project object */;
+}
