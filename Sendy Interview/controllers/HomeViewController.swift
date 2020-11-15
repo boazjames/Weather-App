@@ -12,6 +12,7 @@ import CoreData
 class HomeViewController: UIViewController {
     private var locations: [NSManagedObject] = []
     private var filteredLocations: [NSManagedObject] = []
+    private var lblEmptyHeightConstraint: NSLayoutConstraint!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -26,6 +27,15 @@ class HomeViewController: UIViewController {
     var searchText: String? {
         return searchController.searchBar.text
     }
+    
+    private var lblEmpty: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Futura", size: 17)
+        label.text = "You've not added any location."
+        label.textAlignment = .center
+        return label
+    }()
     
     private var navBar: UINavigationBar = {
         let navBar = UINavigationBar()
@@ -70,6 +80,8 @@ class HomeViewController: UIViewController {
         setupData()
         
         setupSearch()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setupData), name: .onDeleteLocations, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +89,6 @@ class HomeViewController: UIViewController {
             navItem.hidesSearchBarWhenScrolling = false
         }
         super.viewWillAppear(animated)
-        navBar.sizeToFit()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,10 +108,20 @@ class HomeViewController: UIViewController {
         navBar.setItems([navItem], animated: false)
         
         view.addSubview(navBar)
+        view.addSubview(tableView)
+        view.addSubview(lblEmpty)
         
         NSLayoutConstraint.activate([navBar.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
                                      navBar.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
                                      navBar.topAnchor.constraint(equalTo: layoutGuide.topAnchor)])
+        
+        NSLayoutConstraint.activate(
+            [lblEmpty.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
+             lblEmpty.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
+             lblEmpty.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 1)
+        ])
+        lblEmptyHeightConstraint = lblEmpty.heightAnchor.constraint(equalToConstant: 0)
+        lblEmptyHeightConstraint.isActive = true
         
     }
     
@@ -127,13 +148,12 @@ class HomeViewController: UIViewController {
     }
     
     private func configureTableView() {
-        view.addSubview(tableView)
         tableView.tableFooterView = UIView()
         NSLayoutConstraint.activate(
             [tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
              tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
              tableView.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 1),
-             tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor)
+             tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -43)
         ])
         
         tableView.delegate = self
@@ -151,7 +171,7 @@ class HomeViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    private func setupData() {
+    @objc private func setupData() {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -169,6 +189,12 @@ class HomeViewController: UIViewController {
             locations = try managedContext.fetch(fetchRequest)
             filteredLocations.append(contentsOf: locations)
             tableView.reloadData()
+            
+            if locations.isEmpty {
+                lblEmptyHeightConstraint.constant = 50
+            } else {
+                lblEmptyHeightConstraint.constant = 0
+            }
         } catch let error as NSError {
             showAlert("Could not fetch saved locations")
             print("Could not fetch. \(error), \(error.userInfo)")

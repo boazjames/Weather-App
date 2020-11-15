@@ -22,11 +22,11 @@ class MainViewController: UITabBarController {
         helpViewController.tabBarItem = UITabBarItem(title: "Help", image: UIImage(named: "question")?.renderResizedImage(25.0), tag: 1)
 
 
-        let settingsViewController = HelpViewController()
+        let settingsViewController = SettingsViewController()
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings")?.renderResizedImage(25.0), tag: 2)
 
 
-        let tabBarList = [homeViewController, helpViewController, settingsViewController]
+        let tabBarList = [homeViewController, settingsViewController, helpViewController]
         
         viewControllers = tabBarList
     }

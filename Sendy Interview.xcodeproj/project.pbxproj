@@ -37,6 +37,8 @@
 		5258A4AF2560465700A97C16 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4AE2560465700A97C16 /* Configuration.swift */; };
 		5258A4B125605EBA00A97C16 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4B025605EBA00A97C16 /* TodayView.swift */; };
 		5258A4B325607F8000A97C16 /* TodayWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4B225607F8000A97C16 /* TodayWeatherResponse.swift */; };
+		5258A4B52561106A00A97C16 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5258A4B42561106A00A97C16 /* WebKit.framework */; };
+		5258A4B725611F3200A97C16 /* UnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258A4B625611F3200A97C16 /* UnitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		5258A4AE2560465700A97C16 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5258A4B025605EBA00A97C16 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		5258A4B225607F8000A97C16 /* TodayWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherResponse.swift; sourceTree = "<group>"; };
+		5258A4B42561106A00A97C16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5258A4B625611F3200A97C16 /* UnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5258A4B52561106A00A97C16 /* WebKit.framework in Frameworks */,
 				5258A493255EF02C00A97C16 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +205,7 @@
 				5258A49A25601B3C00A97C16 /* WeatherCell.swift */,
 				5258A49E25602AAA00A97C16 /* DayCell.swift */,
 				5258A4B025605EBA00A97C16 /* TodayView.swift */,
+				5258A4B625611F3200A97C16 /* UnitView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 		5258A491255EF02C00A97C16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5258A4B42561106A00A97C16 /* WebKit.framework */,
 				5258A492255EF02C00A97C16 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -386,6 +393,7 @@
 				5258A4A425603C4A00A97C16 /* Wind.swift in Sources */,
 				5258A49B25601B3D00A97C16 /* WeatherCell.swift in Sources */,
 				5258A4AF2560465700A97C16 /* Configuration.swift in Sources */,
+				5258A4B725611F3200A97C16 /* UnitView.swift in Sources */,
 				5258A4A825603D9300A97C16 /* WeatherItem.swift in Sources */,
 				5258A49F25602AAA00A97C16 /* DayCell.swift in Sources */,
 				5258A4A225603BBB00A97C16 /* Weather.swift in Sources */,

@@ -107,6 +107,25 @@ extension UIViewController {
         
         self.present(alert, animated: true)
     }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func showWarningAlert(title: String, message: String, actionButtonClosure: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            actionButtonClosure()
+        }))
+        
+        self.present(alert, animated: true)
+    }
 }
 
 extension UIImageView {
@@ -172,4 +191,8 @@ extension Date {
 
         return localDate
     }
+}
+
+extension Notification.Name {
+    static let onDeleteLocations = Notification.Name("onDeleteLocations")
 }

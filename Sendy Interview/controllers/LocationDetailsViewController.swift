@@ -202,7 +202,7 @@ extension LocationDetailsViewController: UITableViewDataSource {
         
         var win: String {
             if Configuration.getUnits() == UNIT_IMPERIAL {
-                return "\(ele.wind.speed)m/h"
+                return "\(ele.wind.speed)mph"
             } else {
                 return "\(ele.wind.speed)km/h"
             }
@@ -450,7 +450,7 @@ extension LocationDetailsViewController {
         
         var win: String {
             if Configuration.getUnits() == UNIT_IMPERIAL {
-                return "\(data.wind.speed)m/h"
+                return "\(data.wind.speed)mph"
             } else {
                 return "\(data.wind.speed)km/h"
             }
