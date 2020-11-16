@@ -165,6 +165,14 @@ class HomeViewController: UIViewController {
         tableView.register(LocationCell.self, forCellReuseIdentifier: "cell")
     }
     
+    private func enableSearchBar() {
+        self.searchController.searchBar.isUserInteractionEnabled = true
+    }
+    
+    private func disableSearchBar() {
+        self.searchController.searchBar.isUserInteractionEnabled = false
+    }
+    
     @objc private func presentAddVc() {
         searchController.isActive = false
         let vc = AddLocationViewController()
@@ -196,8 +204,10 @@ class HomeViewController: UIViewController {
             
             if locations.isEmpty {
                 lblEmptyHeightConstraint.constant = 50
+                disableSearchBar()
             } else {
                 lblEmptyHeightConstraint.constant = 0
+                enableSearchBar()
             }
         } catch let error as NSError {
             showAlert("Could not fetch saved locations")
@@ -211,6 +221,16 @@ class HomeViewController: UIViewController {
             filteredLocations = locations.filter { (item: NSManagedObject) -> Bool in
                 let address = item.value(forKey: "address") as! String
                 return address.lowercased().contains(searchText.lowercased())
+            }
+        }
+        
+        if !isFiltering {
+            if locations.isEmpty {
+                self.lblEmptyHeightConstraint.constant = 50
+                disableSearchBar()
+            } else {
+                self.lblEmptyHeightConstraint.constant = 0
+                enableSearchBar()
             }
         }
         
@@ -310,6 +330,13 @@ extension HomeViewController: UITableViewDelegate {
                 do {
                     if !self.isFiltering {
                         self.locations.remove(at: indexPath.row)
+                        if self.locations.isEmpty {
+                            self.lblEmptyHeightConstraint.constant = 50
+                            self.disableSearchBar()
+                        } else {
+                            self.lblEmptyHeightConstraint.constant = 0
+                            self.enableSearchBar()
+                        }
                     } else {
                         self.filteredLocations.remove(at: indexPath.row)
                         let idx = self.locations.firstIndex(where: { (ele) -> Bool in
