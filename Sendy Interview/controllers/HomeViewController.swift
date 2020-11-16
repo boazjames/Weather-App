@@ -170,6 +170,7 @@ class HomeViewController: UIViewController {
         let vc = AddLocationViewController()
         vc.saveLocationDelegate = self
         vc.modalPresentationStyle = .fullScreen
+        self.definesPresentationContext = true
         vc.modalTransitionStyle = .coverVertical
         self.present(vc, animated: true, completion: nil)
     }
@@ -275,10 +276,12 @@ extension HomeViewController: UITableViewDelegate {
                 item = self.filteredLocations[indexPath.row]
             }
             
+            self.searchController.isActive = false
             let vc = LocationDetailsViewController()
             vc.item = item
             vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .flipHorizontal
+            self.definesPresentationContext = true
+            vc.modalTransitionStyle = .coverVertical
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -305,7 +308,7 @@ extension HomeViewController: UITableViewDelegate {
                 managedContext.delete(item)
                 
                 do {
-                    if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
+                    if !self.isFiltering {
                         self.locations.remove(at: indexPath.row)
                     } else {
                         self.filteredLocations.remove(at: indexPath.row)
