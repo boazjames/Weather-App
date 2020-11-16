@@ -237,7 +237,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var item: NSManagedObject!
-        if searchController.searchBar.text?.isEmpty == true && searchController.isActive == false {
+        if !self.isFiltering {
             item = self.locations[indexPath.row]
         } else {
             item = self.filteredLocations[indexPath.row]
@@ -269,7 +269,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             var item: NSManagedObject!
-            if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
+            if !self.isFiltering {
                 item = self.locations[indexPath.row]
             } else {
                 item = self.filteredLocations[indexPath.row]
@@ -291,7 +291,7 @@ extension HomeViewController: UITableViewDelegate {
         DispatchQueue.main.async {
             if editingStyle == .delete {
                 var item: NSManagedObject!
-                if self.searchController.searchBar.text?.isEmpty == true && self.searchController.isActive == false {
+                if !self.isFiltering {
                     item = self.locations[indexPath.row]
                 } else {
                     item = self.filteredLocations[indexPath.row]
