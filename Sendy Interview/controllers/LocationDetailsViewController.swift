@@ -182,7 +182,8 @@ extension LocationDetailsViewController: UITableViewDataSource {
         let iconLink = String(format: ICON_URL, ele.weather[0].icon)
         cell.imgView.load(link: iconLink)
         
-        let hum = "\(ele.main.humidity)%"
+        let humVal: Int = Int(ele.main.humidity)
+        let hum = "\(humVal)%"
         let humTxt = "Humidity: \(hum)"
         let humRange = humTxt.range(of: hum)!
         let humNsRange = NSRange(humRange, in: humTxt)
@@ -191,7 +192,8 @@ extension LocationDetailsViewController: UITableViewDataSource {
                                  range: humNsRange)
         cell.lblHum.attributedText = humAttrStr
         
-        let precip = "\(ele.pop * 100)%"
+        let precipVal: Int = Int(ele.pop * 100)
+        let precip = "\(precipVal)%"
         let precipTxt = "Precipipitation: \(precip)"
         let precipRange = precipTxt.range(of: precip)!
         let precipNsRange = NSRange(precipRange, in: precipTxt)
@@ -200,11 +202,12 @@ extension LocationDetailsViewController: UITableViewDataSource {
                                     range: precipNsRange)
         cell.lblPrecip.attributedText = precipAttrStr
         
+        let winVal: Int = Int(ele.wind.speed)
         var win: String {
             if Configuration.getUnits() == UNIT_IMPERIAL {
-                return "\(ele.wind.speed)mph"
+                return "\(winVal)mph"
             } else {
-                return "\(ele.wind.speed)km/h"
+                return "\(winVal)km/h"
             }
         }
         
@@ -229,7 +232,7 @@ extension LocationDetailsViewController: UITableViewDataSource {
                 let temp: Int = Int(ele.main.temp)
                 return String(temp)
             } else {
-                return "\(ele.main.temp)"
+                return String(format: "%.1f", ele.main.temp)
             }
         }
         
@@ -439,7 +442,8 @@ extension LocationDetailsViewController {
         todayView.imgView.load(link: iconLink)
         todayView.lblDsc.text = data.weather[0].description
         
-        let hum = "\(data.main.humidity)%"
+        let humVal: Int = Int(data.main.humidity)
+        let hum = "\(humVal)%"
         let humTxt = "Humidity: \(hum)"
         let humRange = humTxt.range(of: hum)!
         let humNsRange = NSRange(humRange, in: humTxt)
@@ -448,11 +452,12 @@ extension LocationDetailsViewController {
                                  range: humNsRange)
         todayView.lblHum.attributedText = humAttrStr
         
+        let winVal: Int = Int(data.wind.speed)
         var win: String {
             if Configuration.getUnits() == UNIT_IMPERIAL {
-                return "\(data.wind.speed)mph"
+                return "\(winVal)mph"
             } else {
-                return "\(data.wind.speed)km/h"
+                return "\(winVal)km/h"
             }
         }
         
@@ -477,7 +482,7 @@ extension LocationDetailsViewController {
                 let temp: Int = Int(data.main.temp)
                 return String(temp)
             } else {
-                return "\(data.main.temp)"
+                return String(format: "%.1f", data.main.temp)
             }
         }
         

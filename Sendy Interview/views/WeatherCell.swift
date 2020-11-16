@@ -92,7 +92,7 @@ class WeatherCell: UITableViewCell {
         NSLayoutConstraint.activate([
             lblTemp.leadingAnchor.constraint(equalTo: self.imgView.trailingAnchor, constant: 10),
             lblTemp.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
-            lblTemp.widthAnchor.constraint(equalToConstant: 70)
+            lblTemp.widthAnchor.constraint(equalToConstant: 80)
         ])
         
         NSLayoutConstraint.activate([
